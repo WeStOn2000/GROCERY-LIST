@@ -4,19 +4,23 @@ import { createRoot } from 'react-dom/client'
 const items = [
     {
       name: "Apples",
-      quantity: 5
+      quantity: 5,
+      id: 1
     },
     {
       name: "Bananas",
-      quantity: 7
+      quantity: 7,
+      id: 2
     },
     {
       name: "Box of Pasta",
-      quantity: 1
+      quantity: 1,
+      id: 3
     },
     {
       name: "Cookies",
-      quantity: 12
+      quantity: 12,
+      id: 4
     }
   ]
 
@@ -63,6 +67,7 @@ const Header = (props) => {
                <Item 
                  name={item.name}
                  quantity={item.quantity}
+                 key={item.id}
                />
             )}
         </div>
