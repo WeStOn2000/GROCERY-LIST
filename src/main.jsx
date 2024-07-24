@@ -59,10 +59,12 @@ const Header = (props) => {
             />
 
             {/* Grocery List*/}
-            <Item 
-              name='yellow'
-              quantity={1}
-            />
+            {props.initialList.map(item => 
+               <Item 
+                 name={item.name}
+                 quantity={item.quantity}
+               />
+            )}
         </div>
     )
  }
@@ -70,6 +72,6 @@ const Header = (props) => {
 const root = createRoot( document.getElementById('root'));
 root.render(
 <StrictMode>
-  <App initialList={items} />
+  <App initialList={items}/>
 </StrictMode>
 )
