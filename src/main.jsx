@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 
 const items = [
@@ -38,18 +38,19 @@ const Header = (props) => {
      <div className='item'>
       <button className='remove-item'/>
       <span className='item-name'>{props.name}</span>
-      <Counter quantity={props.quantity}/>
+      <Counter />
      </div>
     )
  }
 
- const Counter = (props) => {
+ const Counter = () => {
+    const[quantity,setQuantity] = useState(0)
     return(
     <div className='quantity'>
         <span className='qty-label'>QTY</span>
         <button className='increment'>+</button>
         <button className='decrement'>-</button>
-        <span className='quantity-amount'>{props.quantity}</span>
+        <span className='quantity-amount'>{quantity}</span>
     </div>
     )
  }
@@ -66,7 +67,6 @@ const Header = (props) => {
             {props.initialList.map(item => 
                <Item 
                  name={item.name}
-                 quantity={item.quantity}
                  key={item.id}
                />
             )}
