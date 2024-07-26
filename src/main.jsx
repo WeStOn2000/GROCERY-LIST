@@ -47,7 +47,6 @@ const Header = (props) => {
     const[quantity,setQuantity] = useState(0)
 
     const incrementQuantity = () => {
-           setQuantity(prevQuantity => prevQuantity + 1)
     if(props.name === "Apples"){
         setQuantity(prevQuantity => prevQuantity + 1)
     }
