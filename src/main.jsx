@@ -16,7 +16,7 @@ const Header = (props) => {
 
     return(
      <div className='item'>
-      <button className='remove-item' onClick={() => props.removeItem()}/>
+      <button className='remove-item' onClick={() => props.removeItem(props.id)}/>
       <span className='item-name'>{props.name}</span>
       <Counter />
      </div>
@@ -27,13 +27,12 @@ const Header = (props) => {
     const[quantity,setQuantity] = useState(0)
 
     const incrementQuantity = () => {
-    if(props.name === "Apples"){
         setQuantity(prevQuantity => prevQuantity + 1)
-    }
+    
     }
     const decrementQuantity = () => {
     if(quantity > 0){
-        setQuantity(prevQuantity => prevQuantity - 1)
+        setQuantity(prevQuantity => prevQuantity  - 1)
     }
     }
     return(
